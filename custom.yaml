@@ -108,5 +108,6 @@ palette:
 # Added transient prompt configuration
 transient_prompt: 
   background: transparent
-  foreground: "#ffffff" # Customize color if needed
-  template: "{{ .Folder }}> " # Customize template as desired, e.g., just the folder and a symbol
+  foreground: p:green
+  # Customize template as desired, e.g., just the folder and a symbol
+  template:  
