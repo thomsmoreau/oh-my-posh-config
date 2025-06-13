@@ -118,7 +118,7 @@ blocks:
     segments:
       - foreground: p:green # Using a color from your palette
         style: plain
-        template: ">" # A common prompt symbol, adjust if you prefer something else (e.g., "> ")
+        template: "> " # A common prompt symbol, adjust if you prefer something else (e.g., "> ")
         type: text # Using a text segment for the symbol
 
 # Added transient prompt configuration (kept from your working transient config)
