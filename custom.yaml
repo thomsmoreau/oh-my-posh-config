@@ -90,8 +90,8 @@ blocks:
         template: " \uf0e7{{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} "
         type: azfunc
       - background_templates:
-          - "{{if contains \"default\" .Profile}}#FFA400{{end}}"
-          - "{{if contains \"jan\" .Profile}}#f1184c{{end}}"
+          - '{{if contains "default" .Profile}}#FFA400{{end}}'
+          - '{{if contains "jan" .Profile}}#f1184c{{end}}'
         foreground: "#ffffff"
         powerline_symbol: "\ue0b0"
         properties:
@@ -118,7 +118,7 @@ blocks:
     segments:
       - foreground: p:green # Using a color from your palette
         style: plain
-        template: "\ue602 " # A common prompt symbol, adjust if you prefer something else (e.g., "> ")
+        template: ">" # A common prompt symbol, adjust if you prefer something else (e.g., "> ")
         type: text # Using a text segment for the symbol
 
 # Added transient prompt configuration (kept from your working transient config)
