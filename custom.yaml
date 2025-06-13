@@ -1,8 +1,6 @@
 "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json"
 blocks:
-  - alignment: left
-    newline: true
-    enable_cursor_positioning: true
+  - alignment: left    
     segments:
       - background: "#3A3A3A"
         foreground: "#ffffff"
@@ -92,6 +90,8 @@ blocks:
       - background: "#ffff66"
         foreground: "#111111"
         powerline_symbol: "\ue0b0"
+        newline: true
+        enable_cursor_positioning: true
         style: powerline
         template: " \uf0ad "
         type: root
