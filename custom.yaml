@@ -1,6 +1,18 @@
 "$schema": "https://raw.githubusercontent.com/JanDeDobbeleer/oh-my-posh/main/themes/schema.json"
+version: 3
+console_title_template: "{{ .Folder }}"
+final_space: true
+palette:
+  red: "#FF0000"
+  green: "#00FF00"
+  blue: "#0000FF"
+  white: "#FFFFFF"
+  black: "#111111"
+
 blocks:
-  - alignment: left    
+  # Block 1: Contains most segments, appears on the same line as command output ends
+  - alignment: left
+    type: prompt
     segments:
       - background: "#3A3A3A"
         foreground: "#ffffff"
@@ -90,35 +102,27 @@ blocks:
       - background: "#ffff66"
         foreground: "#111111"
         powerline_symbol: "\ue0b0"
-        # newline: true
-        # enable_cursor_positioning: true
         style: powerline
         template: " \uf0ad "
         type: root
-    type: prompt
+      # You might want to add the status segment here as well, similar to the working theme
+      # - foreground: "#C94A16"
+      #   style: plain
+      #   template: "x{{ reason .Code }} "
+      #   type: status
 
+  # Block 2: Forces a newline and displays the prompt symbol
   - alignment: left
-    newline: true
-    segments:
-    - foreground: "#007ACC"
-      style: plain
-      template: ""
-      type: text
+    newline: true # This block will start on a new line
     type: prompt
+    segments:
+      - foreground: p:green # Using a color from your palette
+        style: plain
+        template: "\ue602 " # A common prompt symbol, adjust if you prefer something else (e.g., "> ")
+        type: text # Using a text segment for the symbol
 
-console_title_template: "{{ .Folder }}"
-final_space: true
-version: 3
-# Colors palette
-palette:
-  red: "#FF0000"
-  green: "#00FF00"
-  blue: "#0000FF"
-  white: "#FFFFFF"
-  black: "#111111"
-# Added transient prompt configuration
-transient_prompt: 
+# Added transient prompt configuration (kept from your working transient config)
+transient_prompt:
   background: transparent
   foreground: p:green
-  # Customize template as desired, e.g., just the folder and a symbol
-  template: "> "
+  template: " " # Or "{{ .Folder }}> " or similar, based on your preference
