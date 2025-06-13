@@ -111,4 +111,4 @@ transient_prompt:
   background: transparent
   foreground: p:green
   # Customize template as desired, e.g., just the folder and a symbol
-  template:  
+  template: "> "
