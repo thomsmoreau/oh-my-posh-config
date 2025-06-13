@@ -98,7 +98,15 @@ blocks:
 console_title_template: "{{ .Folder }}"
 final_space: true
 version: 3
-transient_prompt: # Added transient prompt configuration
+# Colors palette
+palette:
+  red: "#FF0000"
+  green: "#00FF00"
+  blue: "#0000FF"
+  white: "#FFFFFF"
+  black: "#111111"
+# Added transient prompt configuration
+transient_prompt: 
   background: transparent
   foreground: "#ffffff" # Customize color if needed
   template: "{{ .Folder }}> " # Customize template as desired, e.g., just the folder and a symbol
