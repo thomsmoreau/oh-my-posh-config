@@ -90,12 +90,22 @@ blocks:
       - background: "#ffff66"
         foreground: "#111111"
         powerline_symbol: "\ue0b0"
-        newline: true
-        enable_cursor_positioning: true
+        # newline: true
+        # enable_cursor_positioning: true
         style: powerline
         template: " \uf0ad "
         type: root
     type: prompt
+
+  - alignment: left
+    newline: true
+    segments:
+    - foreground: "#007ACC"
+      style: plain
+      template: ""
+      type: text
+    type: prompt
+
 console_title_template: "{{ .Folder }}"
 final_space: true
 version: 3
