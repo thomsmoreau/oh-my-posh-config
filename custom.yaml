@@ -4,7 +4,7 @@ console_title_template: "{{ .Folder }}"
 final_space: true
 palette:
   red: "#FF0000"
-  green: "#00FF00"
+  green: "#3b8631"
   blue: "#0000FF"
   white: "#FFFFFF"
   black: "#111111"
