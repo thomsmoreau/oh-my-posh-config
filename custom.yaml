@@ -125,4 +125,4 @@ blocks:
 transient_prompt:
   background: transparent
   foreground: p:green
-  template: "> " # Or "{{ .Folder }}> " or similar, based on your preference
+  template: "--> " # Or "{{ .Folder }}> " or similar, based on your preference
