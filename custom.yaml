@@ -3,37 +3,40 @@ version: 3
 console_title_template: "{{ .Folder }}"
 final_space: true
 palette:
-  red: "#FF0000"
-  green: "#3b8631"
-  blue: "#0000FF"
-  white: "#FFFFFF"
-  black: "#111111"
+  red: "#ea6962"
+  green: "#a9b665"
+  blue: "#7daea3"
+  yellow: "#d8a657"
+  magenta: "#d3869b"
+  cyan: "#89b482"
+  white: "#d4be98"
+  black: "#1d2021"
 
 blocks:
   # Block 1: Contains most segments, appears on the same line as command output ends
   - alignment: left
     type: prompt
     segments:
-      - background: "#3A3A3A"
-        foreground: "#ffffff"
+      - background: "#32302f"
+        foreground: "#d4be98"
         style: powerline
         template: "{{ if .WSL }}WSL at{{ end }} {{.Icon}} "
         type: os
-      - background: "#458588"
-        foreground: "#282828"
+      - background: "#7daea3"
+        foreground: "#1d2021"
         powerline_symbol: "\ue0b0"
         options:
           style: full
         style: powerline
         template: " {{ .Path }} "
         type: path
-      - background: "#98971A"
+      - background: "#a9b665"
         background_templates:
-          - "{{ if or (.Working.Changed) (.Staging.Changed) }}#FF9248{{ end }}"
-          - "{{ if and (gt .Ahead 0) (gt .Behind 0) }}#ff4500{{ end }}"
-          - "{{ if gt .Ahead 0 }}#B388FF{{ end }}"
-          - "{{ if gt .Behind 0 }}#B388FF{{ end }}"
-        foreground: "#282828"
+          - "{{ if or (.Working.Changed) (.Staging.Changed) }}#d8a657{{ end }}"
+          - "{{ if and (gt .Ahead 0) (gt .Behind 0) }}#ea6962{{ end }}"
+          - "{{ if gt .Ahead 0 }}#d3869b{{ end }}"
+          - "{{ if gt .Behind 0 }}#d3869b{{ end }}"
+        foreground: "#1d2021"
         leading_diamond: "\ue0b6"
         powerline_symbol: "\ue0b0"
         options:
@@ -44,24 +47,24 @@ blocks:
         template: " {{ .HEAD }}{{if .BranchStatus }} {{ .BranchStatus }}{{ end }}{{ if .Working.Changed }} \uf044 {{ .Working.String }}{{ end }}{{ if and (.Working.Changed) (.Staging.Changed) }} |{{ end }}{{ if .Staging.Changed }} \uf046 {{ .Staging.String }}{{ end }}{{ if gt .StashCount 0 }} \ueb4b {{ .StashCount }}{{ end }} "
         trailing_diamond: "\ue0b4"
         type: git
-      - background: "#8ED1F7"
-        foreground: "#111111"
+      - background: "#d8a657"
+        foreground: "#1d2021"
         powerline_symbol: "\ue0b0"
         options:
           fetch_version: true
         style: powerline
         template: " \ue626 {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} "
         type: go
-      - background: "#4063D8"
-        foreground: "#111111"
+      - background: "#d3869b"
+        foreground: "#1d2021"
         powerline_symbol: "\ue0b0"
         options:
           fetch_version: true
         style: powerline
         template: " \ue624 {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} "
         type: julia
-      - background: "#FFDE57"
-        foreground: "#111111"
+      - background: "#89b482"
+        foreground: "#1d2021"
         powerline_symbol: "\ue0b0"
         options:
           display_mode: files
@@ -69,8 +72,8 @@ blocks:
         style: powerline
         template: " \ue235 {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} "
         type: python
-      - background: "#AE1401"
-        foreground: "#ffffff"
+      - background: "#ea6962"
+        foreground: "#d4be98"
         powerline_symbol: "\ue0b0"
         options:
           display_mode: files
@@ -78,16 +81,16 @@ blocks:
         style: powerline
         template: " \ue791 {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} "
         type: ruby
-      - background: "#FEAC19"
-        foreground: "#ffffff"
+      - background: "#d4be98"
+        foreground: "#1d2021"
         powerline_symbol: "\ue0b0"
         options:
           display_mode: files
         style: powerline
         template: " \uf0e7{{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} "
         type: azfunc
-      - background: "#ffff66"
-        foreground: "#111111"
+      - background: "#32302f"
+        foreground: "#ea6962"
         powerline_symbol: "\ue0b0"
         style: powerline
         template: " \uf0ad "
@@ -105,11 +108,11 @@ blocks:
     segments:
       - foreground: p:green # Using a color from your palette
         style: plain
-        template: "> " # A common prompt symbol, adjust if you prefer something else (e.g., "> ")
+        template: ">> " # A common prompt symbol, adjust if you prefer something else (e.g., "> ")
         type: text # Using a text segment for the symbol
 
 # Added transient prompt configuration (kept from your working transient config)
 transient_prompt:
   background: transparent
   foreground: p:green
-  template: "--> " # Or "{{ .Folder }}> " or similar, based on your preference
+  template: "-> " # Or "{{ .Folder }}> " or similar, based on your preference
