@@ -22,7 +22,7 @@ blocks:
       - background: "#458588"
         foreground: "#282828"
         powerline_symbol: "\ue0b0"
-        properties:
+        options:
           style: full
         style: powerline
         template: " {{ .Path }} "
@@ -36,10 +36,8 @@ blocks:
         foreground: "#282828"
         leading_diamond: "\ue0b6"
         powerline_symbol: "\ue0b0"
-        properties:
+        options:
           branch_template: "{{ trunc 25 .Branch }}"
-          fetch_stash_count: true
-          fetch_status: true
           branch_icon: "\uE0A0 "
           branch_identical_icon: "\u25CF"
         style: powerline
@@ -49,7 +47,7 @@ blocks:
       - background: "#8ED1F7"
         foreground: "#111111"
         powerline_symbol: "\ue0b0"
-        properties:
+        options:
           fetch_version: true
         style: powerline
         template: " \ue626 {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} "
@@ -57,7 +55,7 @@ blocks:
       - background: "#4063D8"
         foreground: "#111111"
         powerline_symbol: "\ue0b0"
-        properties:
+        options:
           fetch_version: true
         style: powerline
         template: " \ue624 {{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} "
@@ -65,7 +63,7 @@ blocks:
       - background: "#FFDE57"
         foreground: "#111111"
         powerline_symbol: "\ue0b0"
-        properties:
+        options:
           display_mode: files
           fetch_virtual_env: false
         style: powerline
@@ -74,7 +72,7 @@ blocks:
       - background: "#AE1401"
         foreground: "#ffffff"
         powerline_symbol: "\ue0b0"
-        properties:
+        options:
           display_mode: files
           fetch_version: true
         style: powerline
@@ -83,22 +81,11 @@ blocks:
       - background: "#FEAC19"
         foreground: "#ffffff"
         powerline_symbol: "\ue0b0"
-        properties:
+        options:
           display_mode: files
-          fetch_version: false
         style: powerline
         template: " \uf0e7{{ if .Error }}{{ .Error }}{{ else }}{{ .Full }}{{ end }} "
         type: azfunc
-      - background_templates:
-          - '{{if contains "default" .Profile}}#FFA400{{end}}'
-          - '{{if contains "jan" .Profile}}#f1184c{{end}}'
-        foreground: "#ffffff"
-        powerline_symbol: "\ue0b0"
-        properties:
-          display_default: false
-        style: powerline
-        template: " \ue7ad {{ .Profile }}{{ if .Region }}@{{ .Region }}{{ end }} "
-        type: aws
       - background: "#ffff66"
         foreground: "#111111"
         powerline_symbol: "\ue0b0"
