@@ -95,11 +95,28 @@ blocks:
         style: powerline
         template: " \uf0ad "
         type: root
-      # You might want to add the status segment here as well, similar to the working theme
-      # - foreground: "#C94A16"
-      #   style: plain
-      #   template: "x{{ reason .Code }} "
-      #   type: status
+  # Block 1b: p10k-style right-aligned status / execution time / clock
+  - alignment: right
+    type: prompt
+    segments:
+      - type: status
+        style: plain
+        foreground: "#a9b665"
+        foreground_templates:
+          - "{{ if gt .Code 0 }}#ea6962{{ end }}"
+        template: "{{ if gt .Code 0 }}\uf00d {{ .Code }}{{ else }}\uf00c{{ end }} "
+      - type: executiontime
+        style: plain
+        foreground: "#d4be98"
+        options:
+          threshold: 1000
+        template: " \uf252 {{ .FormattedMs }} "
+      - type: time
+        style: plain
+        foreground: "#89b482"
+        options:
+          format: "15:04:05"
+        template: " \uf017 {{ .CurrentDate | date .Format }} "
 
   # Block 2: Forces a newline and displays the prompt symbol
   - alignment: left
@@ -116,3 +133,8 @@ transient_prompt:
   background: transparent
   foreground: p:green
   template: "-> " # Or "{{ .Folder }}> " or similar, based on your preference
+
+# p10k instant-prompt style: continuation lines get the same arrow
+secondary_prompt:
+  foreground: p:green
+  template: "-> "
